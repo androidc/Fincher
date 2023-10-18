@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Fincher
+
+  Created by Артем Солохин on 18.10.2023.
+  
+*/
+"Calculation option" = "Вариант расчета";
+"Calculation of monthly payment" = "Расчет ежемесячного платежа";
+"Loan term calculation" = "Расчет срока кредита";
+"Calculation of the mla" = "Расчет максимальной суммы кредита";
+"Amount of credit" = "Сумма кредита";
+"calcOptionTip" = "Калькулятор производит три варианта расчетов: расчет ежемесячного платежа, расчет срока кредита  по сумме и расчет возможной суммы кредита при фиксированном сроке и платеже";
+"Ok, i got it" = "Понятно";

@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Fincher
+
+  Created by Артем Солохин on 18.10.2023.
+  
+*/
+"Calculation option" = "Calculation option";
+"Calculation of monthly payment" = "Calculation of monthly payment";
+"Loan term calculation" = "Loan term calculation";
+"Calculation of the mla" = "Calculation of the maximum loan amount";
+"Amount of credit" = "Amount of credit";
+"calcOptionTip" = "The calculator produces three calculation options: calculating the monthly payment, calculating the loan term by amount and calculating the possible loan amount with a fixed term and payment";
+"Ok, i got it" = "Ok, i got it";
