@@ -10,5 +10,7 @@ class Strings {
     let amountOfCreditString = NSLocalizedString("Amount of credit", comment: "Amount of credit")
     let calcOptionsTipString = NSLocalizedString("calcOptionTip", comment: "Calculation Options Tip")
     let okString = NSLocalizedString("Ok, i got it", comment: "Ok, i got it")
+    let yearString = NSLocalizedString("year", comment: "year")
+    let monthString = NSLocalizedString("month", comment: "month")
+    let creditTermString = NSLocalizedString("Credit Term", comment: "Credit Term")
 }
-
