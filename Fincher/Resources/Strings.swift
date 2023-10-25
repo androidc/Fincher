@@ -13,4 +13,6 @@ class Strings {
     let yearString = NSLocalizedString("year", comment: "year")
     let monthString = NSLocalizedString("month", comment: "month")
     let creditTermString = NSLocalizedString("Credit Term", comment: "Credit Term")
+    let interestRateString = NSLocalizedString("Interest Rate", comment: "Interest Rate")
+    let monthlyPaymentString = NSLocalizedString("Monthly Payment", comment: "Monthly Payment")
 }

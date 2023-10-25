@@ -1,22 +1,20 @@
-//Created by chizztectep on 22.10.2023 
+//Created by chizztectep on 25.10.2023 
 
 import Foundation
 import UIKit
 import SnapKit
 
-class CreditTermStackViewBuilder {
-    //label + textView + dropDown (лет/месяцев)
-    
+class MonthlyPaymentStackViewBuilder {
     let dropDownButtonBuilder = DropDownButtonBuilder()
     
-    let lblCalculationOption: UILabel = {
+    let lblMonthlyPayment: UILabel = {
            let lbl = UILabel()
-           lbl.text = Strings.shared.creditTermString
+           lbl.text = Strings.shared.monthlyPaymentString
            lbl.textColor = .lightGray
            return lbl
        }()
     
-    let textViewCreditTerm: UITextView = {
+    let textViewMonthlyPayment: UITextView = {
          let textView = UITextView()
             textView.backgroundColor = .white //bkgdColor
             textView.textAlignment = .center
@@ -29,24 +27,25 @@ class CreditTermStackViewBuilder {
             return textView
      }()
     
-    func buildCreditTermStackView() -> UIStackView {
+    func buildMonthlyPaymentStackView() -> UIStackView {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .top
         stackView.distribution = .fill
-        let dropDownButton = dropDownButtonBuilder.buildDropDownTermButton()
-        [self.lblCalculationOption,
-          self.textViewCreditTerm,
+        let dropDownButton = dropDownButtonBuilder.buildDropDownCurrencyButton()
+        [self.lblMonthlyPayment,
+            self.textViewMonthlyPayment,
          dropDownButton].forEach { stackView.addArrangedSubview($0) }
-//        textViewCreditTerm.snp.makeConstraints { make in
-//            make.left.equalTo(lblCalculationOption.snp.right).inset(-10)
+//        textViewMonthlyPayment.snp.makeConstraints { make in
+//            make.left.equalTo(lblMonthlyPayment.snp.right).inset(-10)
 //        }
 //        dropDownButton.snp.makeConstraints { make in
-//            make.left.equalTo(textViewCreditTerm.snp.right).inset(-10)
+//            make.left.equalTo(textViewMonthlyPayment.snp.right).inset(-10)
 //        }
         stackView.spacing = UIStackView.spacingUseSystem
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
         return stackView
     }
+    
     
 }
