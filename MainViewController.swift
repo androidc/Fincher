@@ -21,14 +21,16 @@ enum CalculationType: String {
 class MainViewController: UIViewController {
     
     private var subscriptions = Set<AnyCancellable>()
+    private let viewModel = ViewModel()
     
     
     var calculationStackViewBuilder = CalculateOptionStackViewBuilder()
     let dropDownButtonBuilder = DropDownButtonBuilder()
-    let amountOfCreditBuilder = AmountOfCreditStackViewBuilder()
+    
     let creditTermStackViewBuilder = CreditTermStackViewBuilder()
     let interestRateStackViewBuilder = InterestRateStackViewBuilder()
     let monthlyPaymentStackViewBuilder = MonthlyPaymentStackViewBuilder()
+    let amountOfCreditBuilder = AmountOfCreditStackViewBuilder()
     var calculaionSV: UIStackView = UIStackView()
     var dropDownButton: UIButton = UIButton()
     var amountOfCreditSV: UIStackView = UIStackView()
@@ -38,11 +40,12 @@ class MainViewController: UIViewController {
     var radioButtonView: UIView = UIView()
     
     var calculationType: CalculationType = .anuitent
-   
-    
 
     convenience init() {
         self.init(nibName:nil, bundle:nil)
+        
+      
+        // stack views init
         self.calculationStackViewBuilder = CalculateOptionStackViewBuilder(viewController: self)
         self.calculaionSV = calculationStackViewBuilder.buildCalculationOptionSV()
         self.dropDownButton = dropDownButtonBuilder.buildDropDownButton()
@@ -51,6 +54,12 @@ class MainViewController: UIViewController {
         self.interestRateSV = interestRateStackViewBuilder.buildInterestRateStackView()
         self.monthlyPaymentSV = monthlyPaymentStackViewBuilder.buildMonthlyPaymentStackView()
         self.radioButtonView = createCalculationTypeView()
+        
+        // binding
+        amountOfCreditBuilder.textViewAmountCredit.textPublisher
+            .assign(to: \.amountOfCredit, on: viewModel)
+            .store(in: &subscriptions)
+ 
     }
 
     lazy var mainSV: UIStackView = {
@@ -237,3 +246,15 @@ class MainViewController: UIViewController {
 
 
 }
+
+
+extension UITextView {
+    var textPublisher: AnyPublisher<String,Never> {
+        NotificationCenter.default
+            .publisher(for: UITextView.textDidChangeNotification, object: self)
+            .compactMap{ $0.object as? UITextView }
+            .map { $0.text ?? "" }
+            .eraseToAnyPublisher()
+    }
+}
+

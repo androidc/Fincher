@@ -16,6 +16,7 @@
 		1BEECA6F2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA6E2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift */; };
 		1BEECA712AE934300085AB1E /* InterestRateStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA702AE934300085AB1E /* InterestRateStackViewBuilder.swift */; };
 		1BEECA732AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA722AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift */; };
+		1BEECA792AEEBBAA0085AB1E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA782AEEBBAA0085AB1E /* ViewModel.swift */; };
 		245BDA66D846C5BAC755C3AA /* Pods_FincherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D657E842A100FC60B4DD3071 /* Pods_FincherTests.framework */; };
 		51191BACE14E19FB23B73618 /* Pods_Fincher_FincherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34C4F0A82B8DF30B51ECCE7 /* Pods_Fincher_FincherUITests.framework */; };
 		924669992ADDB6EE00C2A238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924669982ADDB6EE00C2A238 /* AppDelegate.swift */; };
@@ -57,6 +58,7 @@
 		1BEECA6E2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTermStackViewBuilder.swift; sourceTree = "<group>"; };
 		1BEECA702AE934300085AB1E /* InterestRateStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestRateStackViewBuilder.swift; sourceTree = "<group>"; };
 		1BEECA722AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentStackViewBuilder.swift; sourceTree = "<group>"; };
+		1BEECA782AEEBBAA0085AB1E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = Fincher/App/Flows/ViewModel.swift; sourceTree = SOURCE_ROOT; };
 		2A6D6232FB7AC4E430DA1A38 /* Pods-Fincher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fincher.debug.xcconfig"; path = "Target Support Files/Pods-Fincher/Pods-Fincher.debug.xcconfig"; sourceTree = "<group>"; };
 		32DB09BD8B4D417652BE1814 /* Pods-FincherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FincherTests.debug.xcconfig"; path = "Target Support Files/Pods-FincherTests/Pods-FincherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		34A5529620D6A61E2982F382 /* Pods_Fincher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fincher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +240,7 @@
 		924669CF2ADDC55600C2A238 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				1BEECA782AEEBBAA0085AB1E /* ViewModel.swift */,
 			);
 			path = BusinessLogic;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				1BEECA6B2AE5B0400085AB1E /* DropDownButtonBuilder.swift in Sources */,
 				1BEECA692AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift in Sources */,
 				1BEECA712AE934300085AB1E /* InterestRateStackViewBuilder.swift in Sources */,
+				1BEECA792AEEBBAA0085AB1E /* ViewModel.swift in Sources */,
 				1B2F32532ADEDF2700F68A15 /* MainViewController.swift in Sources */,
 				924669992ADDB6EE00C2A238 /* AppDelegate.swift in Sources */,
 				1BEECA6F2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift in Sources */,

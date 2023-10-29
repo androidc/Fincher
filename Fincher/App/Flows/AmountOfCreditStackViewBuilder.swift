@@ -4,8 +4,9 @@ import Foundation
 import UIKit
 import SnapKit
 
+
 class AmountOfCreditStackViewBuilder {
-    
+
     let dropDownButtonBuilder = DropDownButtonBuilder()
   
     let lblAmountCredit: UILabel = {
@@ -25,10 +26,13 @@ class AmountOfCreditStackViewBuilder {
            textView.translatesAutoresizingMaskIntoConstraints = false //enable autolayout
            textView.heightAnchor.constraint(equalToConstant: 20).isActive = true
            textView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+         
            return textView
     }()
     
     func buildAmountOfCreditStackView() -> UIStackView {
+         
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .top
@@ -37,12 +41,6 @@ class AmountOfCreditStackViewBuilder {
         [self.lblAmountCredit,
             self.textViewAmountCredit,
          dropDownButton].forEach { stackView.addArrangedSubview($0) }
-//        textViewAmountCredit.snp.makeConstraints { make in
-//            make.left.equalTo(lblAmountCredit.snp.right).inset(-10)
-//        }
-//        dropDownButton.snp.makeConstraints { make in
-//            make.left.equalTo(textViewAmountCredit.snp.right).inset(-10)
-//        }
         stackView.spacing = UIStackView.spacingUseSystem
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
         return stackView
@@ -50,3 +48,5 @@ class AmountOfCreditStackViewBuilder {
     
     
 }
+
+
