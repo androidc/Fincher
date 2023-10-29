@@ -5,9 +5,23 @@ import DropDown
 import SnapKit
 import Combine
 
+enum CalculationType: String {
+        case anuitent = "Ануитентные"
+        case differentiated = "Дифференцированные"
+    }
+    
+    enum TagViews: Int {
+        case anuitentButton = 1
+        case differentiatedButton = 2
+        case infoAnuitentButton = 3
+        case infoDifferentiatedButton = 4
+    }
+
+
 class MainViewController: UIViewController {
     
     private var subscriptions = Set<AnyCancellable>()
+    
     
     var calculationStackViewBuilder = CalculateOptionStackViewBuilder()
     let dropDownButtonBuilder = DropDownButtonBuilder()
@@ -21,7 +35,10 @@ class MainViewController: UIViewController {
     var creditTermSV: UIStackView = UIStackView()
     var interestRateSV: UIStackView = UIStackView()
     var monthlyPaymentSV: UIStackView = UIStackView()
+    var radioButtonView: UIView = UIView()
     
+    var calculationType: CalculationType = .anuitent
+   
     
 
     convenience init() {
@@ -33,9 +50,14 @@ class MainViewController: UIViewController {
         self.creditTermSV = creditTermStackViewBuilder.buildCreditTermStackView()
         self.interestRateSV = interestRateStackViewBuilder.buildInterestRateStackView()
         self.monthlyPaymentSV = monthlyPaymentStackViewBuilder.buildMonthlyPaymentStackView()
+        self.radioButtonView = createCalculationTypeView()
     }
 
     lazy var mainSV: UIStackView = {
+        
+        
+        let radioView = createCalculationTypeView()
+        
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .top
@@ -45,7 +67,8 @@ class MainViewController: UIViewController {
             self.dropDownButton,
             self.amountOfCreditSV,
             self.creditTermSV,
-            self.interestRateSV].forEach { stackView.addArrangedSubview($0) }
+            self.interestRateSV,
+            radioView].forEach { stackView.addArrangedSubview($0) }
         
         return stackView
     }()
@@ -71,7 +94,8 @@ class MainViewController: UIViewController {
                         self.dropDownButton,
                         self.amountOfCreditSV,
                         self.creditTermSV,
-                        self.interestRateSV].forEach { self.mainSV.addArrangedSubview($0) }
+                        self.interestRateSV,
+                        self.radioButtonView].forEach { self.mainSV.addArrangedSubview($0) }
                         self.setupConstraintsMain()
                 case 1:
                     self.mainSV.subviews.forEach({ $0.removeFromSuperview() })
@@ -80,7 +104,15 @@ class MainViewController: UIViewController {
                         self.amountOfCreditSV,
                         self.monthlyPaymentSV,
                         self.interestRateSV].forEach { self.mainSV.addArrangedSubview($0) }
-                    self.setupConstraintsMain()
+                        self.setupConstraintsMain()
+                case 2:   self.mainSV.subviews.forEach({ $0.removeFromSuperview() })
+                    [   self.calculaionSV,
+                        self.dropDownButton,
+                        self.creditTermSV,
+                        self.monthlyPaymentSV,
+                        self.interestRateSV].forEach { self.mainSV.addArrangedSubview($0) }
+                        self.setupConstraintsMain()
+            
                 default:
                     break
                 }
@@ -106,6 +138,102 @@ class MainViewController: UIViewController {
                         make.right.equalToSuperview().offset(-20)
               }
     }
+    
+    func createCalculationTypeView() -> UIView {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.alignment = .leading
+        let anuitentView = createRadioButtonView(.anuitent)
+        let differentiatedView = createRadioButtonView(.differentiated)
+        stack.addArrangedSubview(anuitentView)
+        stack.addArrangedSubview(differentiatedView)
+        return stack
+    }
+    
+    func createRadioButtonView(_ type: CalculationType) -> UIView {
+            let stack = UIStackView()
+            stack.axis = .horizontal
+            let radioButton = createRadioButton(type)
+            let infoButton = createCalculationInfoButton(type)
+            switch type {
+                case .anuitent:
+                    radioButton.tag = TagViews.anuitentButton.rawValue
+                    infoButton.tag = TagViews.infoAnuitentButton.rawValue
+                case .differentiated:
+                    radioButton.tag = TagViews.differentiatedButton.rawValue
+                    infoButton.tag = TagViews.infoDifferentiatedButton.rawValue
+            }
+            stack.addArrangedSubview(radioButton)
+            stack.addArrangedSubview(infoButton)
+            stack.translatesAutoresizingMaskIntoConstraints = false
+            return stack
+        }
+    
+    
+    func createCalculationInfoButton(_ type: CalculationType) -> UIButton {
+           let infoButton = UIButton(type: .system)
+           infoButton.setImage(UIImage(systemName: "info.circle"), for: .normal)
+           infoButton.addTarget(self, action: #selector(radioButtonTap(sender:)), for: .touchUpInside)
+           
+           infoButton.translatesAutoresizingMaskIntoConstraints = false
+           NSLayoutConstraint.activate([
+               infoButton.widthAnchor.constraint(equalToConstant: 44),
+               infoButton.heightAnchor.constraint(equalToConstant: 44),
+           ])
+           return infoButton
+       }
+
+
+
+    
+    func createRadioButton(_ type: CalculationType) -> UIButton {
+        let radioButton = UIButton(type: .system)
+        radioButton.setImage(UIImage(systemName: "circle"), for: .normal)
+        radioButton.setImage(UIImage(systemName: "circle.circle"), for: .selected)
+        radioButton.addTarget(self, action: #selector(radioButtonTap(sender:)), for: .touchUpInside)
+        radioButton.setTitle(type.rawValue, for: .normal)
+        radioButton.isSelected = type == calculationType
+        
+        radioButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            radioButton.heightAnchor.constraint(equalToConstant: 44)
+            
+        ])
+        return radioButton
+    }
+    
+    func calculationTypeHandler(_ type: CalculationType) {
+            let anuitentButton = view.viewWithTag(TagViews.anuitentButton.rawValue) as? UIButton
+            let differentiatedButton = view.viewWithTag(TagViews.differentiatedButton.rawValue) as? UIButton
+            switch type {
+                case .anuitent:
+                    anuitentButton?.isSelected = true
+                    differentiatedButton?.isSelected = false
+                case .differentiated:
+                    anuitentButton?.isSelected = false
+                    differentiatedButton?.isSelected = true
+            }
+            calculationType = type
+        }
+    
+    func tagHandler(_ tag: Int) {
+           switch TagViews(rawValue: tag) {
+               case .anuitentButton:
+                   calculationTypeHandler(.anuitent)
+               case .differentiatedButton:
+                   calculationTypeHandler(.differentiated)
+               case .infoAnuitentButton:
+                   print("show anuitent calculation info")
+               case .infoDifferentiatedButton:
+                   print("show differentiated calculation info")
+               case .none:
+                   break
+           }
+       }
+    
+    @objc func radioButtonTap(sender: UIButton) {
+           tagHandler(sender.tag)
+       }
 
 
 }

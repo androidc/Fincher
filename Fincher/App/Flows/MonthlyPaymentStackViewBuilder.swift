@@ -36,12 +36,6 @@ class MonthlyPaymentStackViewBuilder {
         [self.lblMonthlyPayment,
             self.textViewMonthlyPayment,
          dropDownButton].forEach { stackView.addArrangedSubview($0) }
-//        textViewMonthlyPayment.snp.makeConstraints { make in
-//            make.left.equalTo(lblMonthlyPayment.snp.right).inset(-10)
-//        }
-//        dropDownButton.snp.makeConstraints { make in
-//            make.left.equalTo(textViewMonthlyPayment.snp.right).inset(-10)
-//        }
         stackView.spacing = UIStackView.spacingUseSystem
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
         return stackView
