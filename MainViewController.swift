@@ -20,17 +20,30 @@ enum CalculationType: String {
 
 class MainViewController: UIViewController {
     
-    private var subscriptions = Set<AnyCancellable>()
+    let  btnCalculate: UIButton = {
+    
+        let btn = UIButton(type: .system) // let preferred over var here
+        btn.frame = CGRectMake(100, 100, 100, 50)
+        btn.setTitle("Рассчитать", for: .normal)
+        btn.addTarget(self, action: #selector(btnPopUpCalculate), for: .touchUpInside)
+        return btn
+    }()
+    
+ 
+    
+    
+    var subscriptions = Set<AnyCancellable>()
     private let viewModel = ViewModel()
     
-    
+    var lblAnnuitentPayment: UILabel?
     var calculationStackViewBuilder = CalculateOptionStackViewBuilder()
     let dropDownButtonBuilder = DropDownButtonBuilder()
     
-    let creditTermStackViewBuilder = CreditTermStackViewBuilder()
+     
     let interestRateStackViewBuilder = InterestRateStackViewBuilder()
     let monthlyPaymentStackViewBuilder = MonthlyPaymentStackViewBuilder()
-    let amountOfCreditBuilder = AmountOfCreditStackViewBuilder()
+    var creditTermStackViewBuilder: CreditTermStackViewBuilder?
+    var amountOfCreditBuilder: AmountOfCreditStackViewBuilder?
     var calculaionSV: UIStackView = UIStackView()
     var dropDownButton: UIButton = UIButton()
     var amountOfCreditSV: UIStackView = UIStackView()
@@ -49,16 +62,28 @@ class MainViewController: UIViewController {
         self.calculationStackViewBuilder = CalculateOptionStackViewBuilder(viewController: self)
         self.calculaionSV = calculationStackViewBuilder.buildCalculationOptionSV()
         self.dropDownButton = dropDownButtonBuilder.buildDropDownButton()
-        self.amountOfCreditSV = amountOfCreditBuilder.buildAmountOfCreditStackView()
-        self.creditTermSV = creditTermStackViewBuilder.buildCreditTermStackView()
+        self.creditTermStackViewBuilder = CreditTermStackViewBuilder(viewModel: viewModel)
+        self.creditTermSV = creditTermStackViewBuilder!.buildCreditTermStackView()
         self.interestRateSV = interestRateStackViewBuilder.buildInterestRateStackView()
         self.monthlyPaymentSV = monthlyPaymentStackViewBuilder.buildMonthlyPaymentStackView()
         self.radioButtonView = createCalculationTypeView()
+        self.amountOfCreditBuilder = AmountOfCreditStackViewBuilder(viewModel: viewModel)
+        
+        self.amountOfCreditSV = amountOfCreditBuilder!.buildAmountOfCreditStackView()
         
         // binding
-        amountOfCreditBuilder.textViewAmountCredit.textPublisher
+        amountOfCreditBuilder!.textViewAmountCredit.textPublisher
             .assign(to: \.amountOfCredit, on: viewModel)
             .store(in: &subscriptions)
+        
+        creditTermStackViewBuilder!.textViewCreditTerm.textPublisher
+            .assign(to: \.creditTerm, on: viewModel)
+            .store(in: &subscriptions)
+        
+        interestRateStackViewBuilder.textViewInterestRate.doublePublisher
+            .assign(to: \.interestRate, on: viewModel)
+            .store(in: &subscriptions)
+            
  
     }
 
@@ -77,7 +102,9 @@ class MainViewController: UIViewController {
             self.amountOfCreditSV,
             self.creditTermSV,
             self.interestRateSV,
-            radioView].forEach { stackView.addArrangedSubview($0) }
+            radioView,
+            self.btnCalculate
+            ].forEach { stackView.addArrangedSubview($0) }
         
         return stackView
     }()
@@ -86,11 +113,15 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
           self.view.addSubview(self.mainSV)
           self.setupConstraintsMain()
+        
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        
+    
         
         dropDownButtonBuilder.selectedCalculationOption
             .sink { value in
@@ -104,7 +135,8 @@ class MainViewController: UIViewController {
                         self.amountOfCreditSV,
                         self.creditTermSV,
                         self.interestRateSV,
-                        self.radioButtonView].forEach { self.mainSV.addArrangedSubview($0) }
+                        self.radioButtonView,
+                        self.btnCalculate].forEach { self.mainSV.addArrangedSubview($0) }
                         self.setupConstraintsMain()
                 case 1:
                     self.mainSV.subviews.forEach({ $0.removeFromSuperview() })
@@ -112,24 +144,26 @@ class MainViewController: UIViewController {
                         self.dropDownButton,
                         self.amountOfCreditSV,
                         self.monthlyPaymentSV,
-                        self.interestRateSV].forEach { self.mainSV.addArrangedSubview($0) }
+                        self.interestRateSV,
+                        self.btnCalculate].forEach { self.mainSV.addArrangedSubview($0) }
                         self.setupConstraintsMain()
                 case 2:   self.mainSV.subviews.forEach({ $0.removeFromSuperview() })
                     [   self.calculaionSV,
                         self.dropDownButton,
                         self.creditTermSV,
                         self.monthlyPaymentSV,
-                        self.interestRateSV].forEach { self.mainSV.addArrangedSubview($0) }
+                        self.interestRateSV,
+                        self.btnCalculate].forEach { self.mainSV.addArrangedSubview($0) }
                         self.setupConstraintsMain()
-            
+
                 default:
                     break
                 }
 
             }
             .store(in: &subscriptions)
-        
-    
+
+      
        
         // Do any additional setup after loading the view.
     }
@@ -243,17 +277,49 @@ class MainViewController: UIViewController {
     @objc func radioButtonTap(sender: UIButton) {
            tagHandler(sender.tag)
        }
+    
+    @objc
+    func btnPopUpCalculate(sender: UIButton) {
+        
+        guard let lblAnnuitentPayment = lblAnnuitentPayment else {
+            lblAnnuitentPayment = {
+                   let lbl = UILabel()
+                   lbl.text = String(format: "%.2f", viewModel.a)
+                   lbl.textColor = .red
+                   return lbl
+               }()
+            self.mainSV.addArrangedSubview(lblAnnuitentPayment!)
+            return
+        }
+      
+        lblAnnuitentPayment.text = String(format: "%.2f", viewModel.a)
+      
+       }
 
 
 }
 
 
 extension UITextView {
-    var textPublisher: AnyPublisher<String,Never> {
+    var textPublisher: AnyPublisher<Int,Never> {
         NotificationCenter.default
             .publisher(for: UITextView.textDidChangeNotification, object: self)
             .compactMap{ $0.object as? UITextView }
             .map { $0.text ?? "" }
+            .map({ value in
+                Int(value) ?? 0
+            })
+            .eraseToAnyPublisher()
+    }
+    
+    var doublePublisher: AnyPublisher<Double,Never> {
+        NotificationCenter.default
+            .publisher(for: UITextView.textDidChangeNotification, object: self)
+            .compactMap{ $0.object as? UITextView }
+            .map { $0.text ?? "" }
+            .map({ value in
+                Double(value) ?? 0.0
+            })
             .eraseToAnyPublisher()
     }
 }

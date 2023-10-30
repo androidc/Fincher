@@ -10,8 +10,11 @@ class DropDownButtonBuilder {
     //var viewController: UIViewController?
     let dropDown = DropDown()
     let dropDownImage = UIImage(systemName: "arrowtriangle.down")
+    
+    let selectedCalculationOption = PassthroughSubject<Int, Never>()
+    let selectedCurrency = PassthroughSubject<Int, Never>()
+    let selectedCreditTermType = PassthroughSubject<Int, Never>()
    
-    var selectedCalculationOption = PassthroughSubject<Int, Never>()
     
     //init(viewController: UIViewController? = nil) {
     //    self.viewController = viewController
@@ -62,7 +65,7 @@ class DropDownButtonBuilder {
                dropDown.show() //7
                dropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
                  guard let _ = self else { return }
-                // TODO: сделать binding связку index с выбором типа Calculation
+                // binding связка index с выбором типа Calculation
                  self?.selectedCalculationOption.send(index)
                  sender.setTitle(item, for: .normal) //9
                }
@@ -76,7 +79,8 @@ class DropDownButtonBuilder {
                dropDown.show() //7
                dropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
                  guard let _ = self else { return }
-                // TODO: сделать binding связку index с выбором типа Term
+                   // binding связка index с выбором типа Term
+                   self?.selectedCreditTermType.send(index)
                  sender.setTitle(item, for: .normal) //9
                }
        }
@@ -87,9 +91,12 @@ class DropDownButtonBuilder {
                dropDown.anchorView = sender //5
                dropDown.bottomOffset = CGPoint(x: 0, y: sender.frame.size.height) //6
                dropDown.show() //7
+               
                dropDown.selectionAction = { [weak self] (index: Int, item: String) in //8
                  guard let _ = self else { return }
-                // TODO: сделать binding связку index с выбором типа Term
+                // binding связка index с выбором типа Term
+                   self?.selectedCurrency.send(index)
+                 
                  sender.setTitle(item, for: .normal) //9
                }
        }

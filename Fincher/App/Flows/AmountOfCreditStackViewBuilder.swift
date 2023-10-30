@@ -3,11 +3,17 @@
 import Foundation
 import UIKit
 import SnapKit
+import Combine
 
 
 class AmountOfCreditStackViewBuilder {
-
+    var subscriptions = Set<AnyCancellable>()
     let dropDownButtonBuilder = DropDownButtonBuilder()
+    var viewModel: ViewModel!
+    
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
   
     let lblAmountCredit: UILabel = {
            let lbl = UILabel()
@@ -38,6 +44,11 @@ class AmountOfCreditStackViewBuilder {
         stackView.alignment = .top
         stackView.distribution = .fill
         let dropDownButton = dropDownButtonBuilder.buildDropDownCurrencyButton()
+      
+        dropDownButtonBuilder.selectedCurrency
+            .assign(to: \.creditCurrency, on: viewModel)
+            .store(in: &subscriptions)
+        
         [self.lblAmountCredit,
             self.textViewAmountCredit,
          dropDownButton].forEach { stackView.addArrangedSubview($0) }
