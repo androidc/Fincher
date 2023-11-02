@@ -36,6 +36,7 @@ class MainViewController: UIViewController {
     private let viewModel = ViewModel()
     
     var lblAnnuitentPayment: UILabel?
+    var lblPercentAll: UILabel?
     var calculationStackViewBuilder = CalculateOptionStackViewBuilder()
     let dropDownButtonBuilder = DropDownButtonBuilder()
     
@@ -281,19 +282,31 @@ class MainViewController: UIViewController {
     @objc
     func btnPopUpCalculate(sender: UIButton) {
         
-        guard let lblAnnuitentPayment = lblAnnuitentPayment else {
+        guard let lblAnnuitentPayment = lblAnnuitentPayment, let lblPercentAll = lblPercentAll else {
+            let percentAll = viewModel.calculateAnnuitentPayments()
             lblAnnuitentPayment = {
                    let lbl = UILabel()
-                   lbl.text = String(format: "%.2f", viewModel.a)
+                   lbl.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
                    lbl.textColor = .red
                    return lbl
                }()
+            lblPercentAll = {
+                   let lbl = UILabel()
+                   lbl.text = "Начисленные проценты " + String(format: "%.2f", percentAll)
+                   lbl.textColor = .red
+                   return lbl
+               }()
+           
+            
             self.mainSV.addArrangedSubview(lblAnnuitentPayment!)
+            self.mainSV.addArrangedSubview(lblPercentAll!)
+            
             return
         }
-      
-        lblAnnuitentPayment.text = String(format: "%.2f", viewModel.a)
-      
+        let percentAll =  viewModel.calculateAnnuitentPayments()
+        lblAnnuitentPayment.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
+        lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", percentAll)
+        
        }
 
 

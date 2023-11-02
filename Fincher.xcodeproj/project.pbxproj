@@ -10,6 +10,7 @@
 		1B2F32532ADEDF2700F68A15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F32522ADEDF2600F68A15 /* MainViewController.swift */; };
 		1B2F32562AE0017600F68A15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B2F32582AE0017600F68A15 /* Localizable.strings */; };
 		1B2F325C2AE004BA00F68A15 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F325B2AE004BA00F68A15 /* Strings.swift */; };
+		1B7375DB2AF0F66F0057D924 /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7375DA2AF0F66F0057D924 /* CreditModel.swift */; };
 		1BEECA692AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA682AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift */; };
 		1BEECA6B2AE5B0400085AB1E /* DropDownButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA6A2AE5B0400085AB1E /* DropDownButtonBuilder.swift */; };
 		1BEECA6D2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA6C2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift */; };
@@ -52,6 +53,7 @@
 		1B2F32592AE001A300F68A15 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		1B2F325A2AE001A400F68A15 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1B2F325B2AE004BA00F68A15 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Fincher/Resources/Strings.swift; sourceTree = SOURCE_ROOT; };
+		1B7375DA2AF0F66F0057D924 /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = SOURCE_ROOT; };
 		1BEECA682AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateOptionStackViewBuilder.swift; sourceTree = "<group>"; };
 		1BEECA6A2AE5B0400085AB1E /* DropDownButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButtonBuilder.swift; sourceTree = "<group>"; };
 		1BEECA6C2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountOfCreditStackViewBuilder.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		924669CE2ADDC54C00C2A238 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				1B7375DA2AF0F66F0057D924 /* CreditModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				1BEECA6B2AE5B0400085AB1E /* DropDownButtonBuilder.swift in Sources */,
 				1BEECA692AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift in Sources */,
 				1BEECA712AE934300085AB1E /* InterestRateStackViewBuilder.swift in Sources */,
+				1B7375DB2AF0F66F0057D924 /* CreditModel.swift in Sources */,
 				1BEECA792AEEBBAA0085AB1E /* ViewModel.swift in Sources */,
 				1B2F32532ADEDF2700F68A15 /* MainViewController.swift in Sources */,
 				924669992ADDB6EE00C2A238 /* AppDelegate.swift in Sources */,
