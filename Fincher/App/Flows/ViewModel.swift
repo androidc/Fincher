@@ -45,6 +45,13 @@ class ViewModel {
         }
     }
     
+    /// процентная ставка
+    @Published var paymentSetted: Double = 0.0 {
+        didSet {
+            print("paymentSetted changed to:", paymentSetted)
+        }
+    }
+    
     
     /// месячная процентная ставка (годовая ставка, поделенная на 12),
     var p: Double  {
@@ -129,6 +136,8 @@ class ViewModel {
         var Sn = 0.0
         /// сумма выплаченных процентов
         var percentAll: Double = 0.0
+        /// размер ежемесячного взноса по аннуитетной схеме
+        var a = self.a
         
         // расчет
         for index in 1...termInMonth {
@@ -150,8 +159,48 @@ class ViewModel {
     }
   
     
+    /**
+     Вычисляет срок кредита по дифференцированной схеме
+     - Returns: кортеж с сроком кредита в месяцах и начисленные проценты
+     */
     
-  
+    func calculateTermPayments() -> (Int,Double) {
+        var result: (Int,Double) = (0,0)
+        /// размер ежемесячного взноса по дифференцированной схеме
+        let b = self.b
+        // очищаем календарь
+        self.paymentsCalendar = []
+        /// остаток основного долга
+        var ostatok = Double(amountOfCredit)
+        /// остаток после уплаты части основного долга
+        var Sn = 0.0
+        /// сколько идет в погашение процентов
+        var percentShare = 0.0
+        /// сумма выплаченных процентов
+        var percentAll: Double = 0.0
+        /// сколько идет в счет основного долга
+        var mainShare = 0.0
+        /// сколько прошло месяцев
+        var term = 0
+        /// сотая часть от месячной процентной ставки
+        let p = self.p
+        var index = 0
+        // расчет
+        while ostatok > 0 {
+            index = index + 1
+            percentShare = ostatok * p
+            percentAll += percentShare
+            mainShare = paymentSetted - percentShare
+            Sn = ostatok - mainShare
+            let payment: Payments = Payments(number: index, ostatok: ostatok, payment: paymentSetted, percent: percentShare, main: mainShare, Sn: Sn)
+            self.paymentsCalendar.append(payment)
+            ostatok = Sn
+        }
+        result.0 = index
+        result.1 = percentAll
+        return result
+        
+    }
     
     
     

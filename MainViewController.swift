@@ -35,6 +35,7 @@ class MainViewController: UIViewController {
     var subscriptions = Set<AnyCancellable>()
     let tagHandlerPublisher = PassthroughSubject<Int, Never>()
     var selectedTag: Int = 0
+    var selectedCalculationOption: Int = 0
     private let viewModel = ViewModel()
     
     var lblAnnuitentPayment: UILabel?
@@ -87,7 +88,10 @@ class MainViewController: UIViewController {
         interestRateStackViewBuilder.textViewInterestRate.doublePublisher
             .assign(to: \.interestRate, on: viewModel)
             .store(in: &subscriptions)
-            
+        
+        monthlyPaymentStackViewBuilder.textViewMonthlyPayment.doublePublisher
+            .assign(to: \.paymentSetted, on: viewModel)
+            .store(in: &subscriptions)
  
     }
 
@@ -125,17 +129,31 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        tagHandlerPublisher.sink { value in
+        tagHandlerPublisher.sink {[self] value in
             self.selectedTag = value
+            self.mainSV.subviews.forEach { view in
+                if view == lblAnnuitentPayment {
+                    view.removeFromSuperview()
+                }
+                if view == lblPercentAll {
+                    view.removeFromSuperview()
+                }
+                if view == lblDiffPayment {
+                    view.removeFromSuperview()
+                }
+            }
+            clearLabels()
         }.store(in: &subscriptions)
         
         dropDownButtonBuilder.selectedCalculationOption
-            .sink { value in
+            .sink { [self] value in
                 print(value)
+                selectedCalculationOption = value
                 switch value {
 
                 case 0:
                             self.mainSV.subviews.forEach({ $0.removeFromSuperview() })
+                    clearLabels()
                     [   self.calculaionSV,
                         self.dropDownButton,
                         self.amountOfCreditSV,
@@ -146,6 +164,7 @@ class MainViewController: UIViewController {
                         self.setupConstraintsMain()
                 case 1:
                     self.mainSV.subviews.forEach({ $0.removeFromSuperview() })
+                    clearLabels()
                     [   self.calculaionSV,
                         self.dropDownButton,
                         self.amountOfCreditSV,
@@ -154,6 +173,7 @@ class MainViewController: UIViewController {
                         self.btnCalculate].forEach { self.mainSV.addArrangedSubview($0) }
                         self.setupConstraintsMain()
                 case 2:   self.mainSV.subviews.forEach({ $0.removeFromSuperview() })
+                    clearLabels()
                     [   self.calculaionSV,
                         self.dropDownButton,
                         self.creditTermSV,
@@ -172,6 +192,12 @@ class MainViewController: UIViewController {
       
        
         // Do any additional setup after loading the view.
+    }
+    
+    private func clearLabels() {
+        self.lblPercentAll = nil
+        self.lblDiffPayment = nil
+        self.lblAnnuitentPayment = nil
     }
     
     private func setupConstraintsMain () {
@@ -289,18 +315,77 @@ class MainViewController: UIViewController {
     @objc
     func btnPopUpCalculate(sender: UIButton) {
         
-        if selectedTag == 0 {
+        if selectedCalculationOption == 0 {
+            if selectedTag == 0 {
+                guard let lblAnnuitentPayment = lblAnnuitentPayment, let lblPercentAll = lblPercentAll else {
+                    let percentAll = viewModel.calculateAnnuitentPayments()
+                    lblAnnuitentPayment = {
+                           let lbl = UILabel()
+                           lbl.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
+                           lbl.textColor = .red
+                           return lbl
+                       }()
+                    lblPercentAll = {
+                           let lbl = UILabel()
+                           lbl.text = "Начисленные проценты " + String(format: "%.2f", percentAll)
+                           lbl.textColor = .red
+                           return lbl
+                       }()
+                   
+                    
+                    self.mainSV.addArrangedSubview(lblAnnuitentPayment!)
+                    self.mainSV.addArrangedSubview(lblPercentAll!)
+                    
+                    return
+                }
+                let percentAll =  viewModel.calculateAnnuitentPayments()
+                lblAnnuitentPayment.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
+                lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", percentAll)
+            }
+            else {
+               
+                
+                guard let lblDiffPayment = lblDiffPayment, let lblPercentAll = lblPercentAll else {
+                    let payments: (Double, Double, Double) = viewModel.calculateDiffPayments()
+                    lblDiffPayment = {
+                           let lbl = UILabel()
+                        lbl.text = "Ежемесячный платеж " + String(format: "%.2f", payments.0) + " ... " + String(format: "%.2f", payments.1)
+                           lbl.textColor = .red
+                           return lbl
+                       }()
+                    
+                    lblPercentAll = {
+                           let lbl = UILabel()
+                        lbl.text = "Начисленные проценты " + String(format: "%.2f", payments.2)
+                           lbl.textColor = .red
+                           return lbl
+                       }()
+                    
+                    self.mainSV.addArrangedSubview(lblDiffPayment!)
+                    self.mainSV.addArrangedSubview(lblPercentAll!)
+                    
+                    return
+                }
+                
+                let payments: (Double, Double, Double) = viewModel.calculateDiffPayments()
+                lblDiffPayment.text = "Ежемесячный платеж " + String(format: "%.2f", payments.0) + " ... " + String(format: "%.2f", payments.1)
+                lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", payments.2)
+            }
+        }
+        
+        if selectedCalculationOption == 1 {
+            let payments: (Int, Double) = viewModel.calculateTermPayments()
+            
             guard let lblAnnuitentPayment = lblAnnuitentPayment, let lblPercentAll = lblPercentAll else {
-                let percentAll = viewModel.calculateAnnuitentPayments()
                 lblAnnuitentPayment = {
                        let lbl = UILabel()
-                       lbl.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
+                       lbl.text = "Срок кредита \(payments.0)" 
                        lbl.textColor = .red
                        return lbl
                    }()
                 lblPercentAll = {
                        let lbl = UILabel()
-                       lbl.text = "Начисленные проценты " + String(format: "%.2f", percentAll)
+                       lbl.text = "Начисленные проценты " + String(format: "%.2f", payments.1)
                        lbl.textColor = .red
                        return lbl
                    }()
@@ -311,38 +396,10 @@ class MainViewController: UIViewController {
                 
                 return
             }
-            let percentAll =  viewModel.calculateAnnuitentPayments()
-            lblAnnuitentPayment.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
-            lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", percentAll)
-        }
-        else {
-           
             
-            guard let lblDiffPayment = lblDiffPayment, let lblPercentAll = lblPercentAll else {
-                let payments: (Double, Double, Double) = viewModel.calculateDiffPayments()
-                lblDiffPayment = {
-                       let lbl = UILabel()
-                    lbl.text = "Ежемесячный платеж " + String(format: "%.2f", payments.0) + " ... " + String(format: "%.2f", payments.1)
-                       lbl.textColor = .red
-                       return lbl
-                   }()
-                
-                lblPercentAll = {
-                       let lbl = UILabel()
-                    lbl.text = "Начисленные проценты " + String(format: "%.2f", payments.2)
-                       lbl.textColor = .red
-                       return lbl
-                   }()
-                
-                self.mainSV.addArrangedSubview(lblDiffPayment!)
-                self.mainSV.addArrangedSubview(lblPercentAll!)
-                
-                return
-            }
-            
-            let payments: (Double, Double, Double) = viewModel.calculateDiffPayments()
-            lblDiffPayment.text = "Ежемесячный платеж " + String(format: "%.2f", payments.0) + " ... " + String(format: "%.2f", payments.1)
-            lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", payments.2)
+            lblAnnuitentPayment.text = "Срок кредита \(payments.0)"
+            lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", payments.1)
+
         }
         
 
