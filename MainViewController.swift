@@ -321,7 +321,7 @@ class MainViewController: UIViewController {
                     let percentAll = viewModel.calculateAnnuitentPayments()
                     lblAnnuitentPayment = {
                            let lbl = UILabel()
-                           lbl.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
+                           lbl.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.monthlyPaymentA)
                            lbl.textColor = .red
                            return lbl
                        }()
@@ -339,7 +339,7 @@ class MainViewController: UIViewController {
                     return
                 }
                 let percentAll =  viewModel.calculateAnnuitentPayments()
-                lblAnnuitentPayment.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.a)
+                lblAnnuitentPayment.text = "Ежемесячный платеж " + String(format: "%.2f", viewModel.monthlyPaymentA)
                 lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", percentAll)
             }
             else {
@@ -402,6 +402,33 @@ class MainViewController: UIViewController {
 
         }
         
+        if selectedCalculationOption == 2 {
+            let payments: (Double, Double) = viewModel.calculateMaxCredit()
+            guard let lblAnnuitentPayment = lblAnnuitentPayment, let lblPercentAll = lblPercentAll else {
+                lblAnnuitentPayment = {
+                       let lbl = UILabel()
+                       lbl.text = "Сумма кредита " + String(format: "%.2f", payments.0)
+                       lbl.textColor = .red
+                       return lbl
+                   }()
+                lblPercentAll = {
+                       let lbl = UILabel()
+                       lbl.text = "Начисленные проценты " + String(format: "%.2f", payments.1)
+                       lbl.textColor = .red
+                       return lbl
+                   }()
+               
+                
+                self.mainSV.addArrangedSubview(lblAnnuitentPayment!)
+                self.mainSV.addArrangedSubview(lblPercentAll!)
+                
+                return
+                }
+            
+            lblAnnuitentPayment.text = "Сумма кредита " + String(format: "%.2f", payments.0)
+            lblPercentAll.text = "Начисленные проценты " + String(format: "%.2f", payments.1)
+        
+        }
 
         
        }

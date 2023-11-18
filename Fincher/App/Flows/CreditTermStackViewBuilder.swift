@@ -6,11 +6,8 @@ import Combine
 
 //label + textView + dropDown (лет/месяцев)
 class CreditTermStackViewBuilder {
-   
-    
     var subscriptions = Set<AnyCancellable>()
     let dropDownButtonBuilder = DropDownButtonBuilder()
-    
     var viewModel: ViewModel!
     
     init(viewModel: ViewModel) {
@@ -46,7 +43,6 @@ class CreditTermStackViewBuilder {
         [self.lblCalculationOption,
           self.textViewCreditTerm,
          dropDownButton].forEach { stackView.addArrangedSubview($0) }
-       
         dropDownButtonBuilder.selectedCreditTermType
             .assign(to: \.creditTermType, on: viewModel)
             .store(in: &subscriptions)
@@ -54,5 +50,4 @@ class CreditTermStackViewBuilder {
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
         return stackView
     }
-    
 }

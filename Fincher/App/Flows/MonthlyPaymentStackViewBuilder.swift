@@ -40,6 +40,4 @@ class MonthlyPaymentStackViewBuilder {
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
         return stackView
     }
-    
-    
 }
