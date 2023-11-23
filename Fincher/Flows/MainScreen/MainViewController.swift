@@ -314,7 +314,15 @@ class MainViewController: UIViewController {
     
     @objc
     func btnPopUpCalculate(sender: UIButton) {
-        
+        let assembly = DetailsScreenAssembly()
+        let data = assembly.mockData()
+        let controller = assembly.assemble(data)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
+    }
+
+    func calculate() {
         if selectedCalculationOption == 0 {
             if selectedTag == 0 {
                 guard let lblAnnuitentPayment = lblAnnuitentPayment, let lblPercentAll = lblPercentAll else {
