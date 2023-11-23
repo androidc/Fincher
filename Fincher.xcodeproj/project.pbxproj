@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B2F32532ADEDF2700F68A15 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F32522ADEDF2600F68A15 /* MainViewController.swift */; };
-		1B2F32562AE0017600F68A15 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B2F32582AE0017600F68A15 /* Localizable.strings */; };
-		1B2F325C2AE004BA00F68A15 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2F325B2AE004BA00F68A15 /* Strings.swift */; };
-		1B7375DB2AF0F66F0057D924 /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7375DA2AF0F66F0057D924 /* CreditModel.swift */; };
-		1BEECA692AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA682AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift */; };
-		1BEECA6B2AE5B0400085AB1E /* DropDownButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA6A2AE5B0400085AB1E /* DropDownButtonBuilder.swift */; };
-		1BEECA6D2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA6C2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift */; };
-		1BEECA6F2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA6E2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift */; };
-		1BEECA712AE934300085AB1E /* InterestRateStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA702AE934300085AB1E /* InterestRateStackViewBuilder.swift */; };
-		1BEECA732AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA722AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift */; };
-		1BEECA792AEEBBAA0085AB1E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEECA782AEEBBAA0085AB1E /* ViewModel.swift */; };
 		245BDA66D846C5BAC755C3AA /* Pods_FincherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D657E842A100FC60B4DD3071 /* Pods_FincherTests.framework */; };
+		3463C7452B0F9A30001033B3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C72C2B0F9A30001033B3 /* Strings.swift */; };
+		3463C7462B0F9A30001033B3 /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C72E2B0F9A30001033B3 /* CreditModel.swift */; };
+		3463C7472B0F9A30001033B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3463C7302B0F9A30001033B3 /* Localizable.strings */; };
+		3463C7482B0F9A30001033B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3463C7322B0F9A30001033B3 /* Assets.xcassets */; };
+		3463C7492B0F9A30001033B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3463C7332B0F9A30001033B3 /* LaunchScreen.storyboard */; };
+		3463C74C2B0F9A30001033B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7392B0F9A30001033B3 /* AppDelegate.swift */; };
+		3463C74D2B0F9A30001033B3 /* DropDownButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73C2B0F9A30001033B3 /* DropDownButtonBuilder.swift */; };
+		3463C74E2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73D2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift */; };
+		3463C74F2B0F9A30001033B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73E2B0F9A30001033B3 /* MainViewController.swift */; };
+		3463C7502B0F9A30001033B3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73F2B0F9A30001033B3 /* ViewModel.swift */; };
+		3463C7512B0F9A30001033B3 /* CreditTermStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7402B0F9A30001033B3 /* CreditTermStackViewBuilder.swift */; };
+		3463C7522B0F9A30001033B3 /* InterestRateStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7412B0F9A30001033B3 /* InterestRateStackViewBuilder.swift */; };
+		3463C7532B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7422B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift */; };
+		3463C7542B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7432B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift */; };
+		3463C7552B0F9A30001033B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7442B0F9A30001033B3 /* SceneDelegate.swift */; };
 		51191BACE14E19FB23B73618 /* Pods_Fincher_FincherUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34C4F0A82B8DF30B51ECCE7 /* Pods_Fincher_FincherUITests.framework */; };
-		924669992ADDB6EE00C2A238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924669982ADDB6EE00C2A238 /* AppDelegate.swift */; };
-		9246699B2ADDB6EE00C2A238 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9246699A2ADDB6EE00C2A238 /* SceneDelegate.swift */; };
-		924669A22ADDB6F000C2A238 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 924669A12ADDB6F000C2A238 /* Assets.xcassets */; };
-		924669A52ADDB6F000C2A238 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 924669A32ADDB6F000C2A238 /* LaunchScreen.storyboard */; };
 		924669B02ADDB6F000C2A238 /* FincherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924669AF2ADDB6F000C2A238 /* FincherTests.swift */; };
 		924669BA2ADDB6F000C2A238 /* FincherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924669B92ADDB6F000C2A238 /* FincherUITests.swift */; };
 		924669BC2ADDB6F000C2A238 /* FincherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924669BB2ADDB6F000C2A238 /* FincherUITestsLaunchTests.swift */; };
@@ -48,30 +48,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B2F32522ADEDF2600F68A15 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
-		1B2F32572AE0017600F68A15 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1B2F32592AE001A300F68A15 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		1B2F325A2AE001A400F68A15 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		1B2F325B2AE004BA00F68A15 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Strings.swift; path = Fincher/Resources/Strings.swift; sourceTree = SOURCE_ROOT; };
-		1B7375DA2AF0F66F0057D924 /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = SOURCE_ROOT; };
-		1BEECA682AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateOptionStackViewBuilder.swift; sourceTree = "<group>"; };
-		1BEECA6A2AE5B0400085AB1E /* DropDownButtonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButtonBuilder.swift; sourceTree = "<group>"; };
-		1BEECA6C2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountOfCreditStackViewBuilder.swift; sourceTree = "<group>"; };
-		1BEECA6E2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditTermStackViewBuilder.swift; sourceTree = "<group>"; };
-		1BEECA702AE934300085AB1E /* InterestRateStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestRateStackViewBuilder.swift; sourceTree = "<group>"; };
-		1BEECA722AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentStackViewBuilder.swift; sourceTree = "<group>"; };
-		1BEECA782AEEBBAA0085AB1E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewModel.swift; path = Fincher/App/Flows/ViewModel.swift; sourceTree = SOURCE_ROOT; };
 		2A6D6232FB7AC4E430DA1A38 /* Pods-Fincher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fincher.debug.xcconfig"; path = "Target Support Files/Pods-Fincher/Pods-Fincher.debug.xcconfig"; sourceTree = "<group>"; };
 		32DB09BD8B4D417652BE1814 /* Pods-FincherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FincherTests.debug.xcconfig"; path = "Target Support Files/Pods-FincherTests/Pods-FincherTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3463C72C2B0F9A30001033B3 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		3463C72E2B0F9A30001033B3 /* CreditModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
+		3463C7312B0F9A30001033B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3463C7322B0F9A30001033B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3463C7342B0F9A30001033B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3463C7362B0F9A30001033B3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3463C7372B0F9A30001033B3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3463C7382B0F9A30001033B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3463C7392B0F9A30001033B3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3463C73C2B0F9A30001033B3 /* DropDownButtonBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownButtonBuilder.swift; sourceTree = "<group>"; };
+		3463C73D2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountOfCreditStackViewBuilder.swift; sourceTree = "<group>"; };
+		3463C73E2B0F9A30001033B3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3463C73F2B0F9A30001033B3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3463C7402B0F9A30001033B3 /* CreditTermStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditTermStackViewBuilder.swift; sourceTree = "<group>"; };
+		3463C7412B0F9A30001033B3 /* InterestRateStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestRateStackViewBuilder.swift; sourceTree = "<group>"; };
+		3463C7422B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentStackViewBuilder.swift; sourceTree = "<group>"; };
+		3463C7432B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateOptionStackViewBuilder.swift; sourceTree = "<group>"; };
+		3463C7442B0F9A30001033B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		34A5529620D6A61E2982F382 /* Pods_Fincher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fincher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		565CD788E1A1642640FC08E0 /* Pods-Fincher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fincher.release.xcconfig"; path = "Target Support Files/Pods-Fincher/Pods-Fincher.release.xcconfig"; sourceTree = "<group>"; };
 		64396A8AC74A400ED8AC0C44 /* Pods-FincherTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FincherTests.release.xcconfig"; path = "Target Support Files/Pods-FincherTests/Pods-FincherTests.release.xcconfig"; sourceTree = "<group>"; };
 		924669952ADDB6EE00C2A238 /* Fincher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fincher.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		924669982ADDB6EE00C2A238 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9246699A2ADDB6EE00C2A238 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		924669A12ADDB6F000C2A238 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		924669A42ADDB6F000C2A238 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		924669A62ADDB6F000C2A238 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		924669AB2ADDB6F000C2A238 /* FincherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FincherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		924669AF2ADDB6F000C2A238 /* FincherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FincherTests.swift; sourceTree = "<group>"; };
 		924669B52ADDB6F000C2A238 /* FincherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FincherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,10 +121,74 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3463C72A2B0F9A30001033B3 /* Fincher */ = {
+			isa = PBXGroup;
+			children = (
+				3463C7392B0F9A30001033B3 /* AppDelegate.swift */,
+				3463C7442B0F9A30001033B3 /* SceneDelegate.swift */,
+				3463C72D2B0F9A30001033B3 /* Entity */,
+				3463C73A2B0F9A30001033B3 /* Flows */,
+				3463C72B2B0F9A30001033B3 /* Core */,
+				3463C72F2B0F9A30001033B3 /* Resources */,
+			);
+			path = Fincher;
+			sourceTree = "<group>";
+		};
+		3463C72B2B0F9A30001033B3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3463C72C2B0F9A30001033B3 /* Strings.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3463C72D2B0F9A30001033B3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				3463C72E2B0F9A30001033B3 /* CreditModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3463C72F2B0F9A30001033B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3463C7322B0F9A30001033B3 /* Assets.xcassets */,
+				3463C7332B0F9A30001033B3 /* LaunchScreen.storyboard */,
+				3463C7382B0F9A30001033B3 /* Info.plist */,
+				3463C7352B0F9A30001033B3 /* LaunchScreen.strings */,
+				3463C7302B0F9A30001033B3 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3463C73A2B0F9A30001033B3 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				3463C73B2B0F9A30001033B3 /* MainScreen */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		3463C73B2B0F9A30001033B3 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3463C73C2B0F9A30001033B3 /* DropDownButtonBuilder.swift */,
+				3463C73D2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift */,
+				3463C73E2B0F9A30001033B3 /* MainViewController.swift */,
+				3463C73F2B0F9A30001033B3 /* ViewModel.swift */,
+				3463C7402B0F9A30001033B3 /* CreditTermStackViewBuilder.swift */,
+				3463C7412B0F9A30001033B3 /* InterestRateStackViewBuilder.swift */,
+				3463C7422B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift */,
+				3463C7432B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
 		9246698C2ADDB6EE00C2A238 = {
 			isa = PBXGroup;
 			children = (
-				924669972ADDB6EE00C2A238 /* Fincher */,
+				3463C72A2B0F9A30001033B3 /* Fincher */,
 				924669AE2ADDB6F000C2A238 /* FincherTests */,
 				924669B82ADDB6F000C2A238 /* FincherUITests */,
 				924669962ADDB6EE00C2A238 /* Products */,
@@ -143,17 +207,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		924669972ADDB6EE00C2A238 /* Fincher */ = {
-			isa = PBXGroup;
-			children = (
-				924669C82ADDC27200C2A238 /* App */,
-				924669CA2ADDC4EA00C2A238 /* Core */,
-				924669C92ADDC4C900C2A238 /* Resources */,
-				924669CB2ADDC4FB00C2A238 /* Environments */,
-			);
-			path = Fincher;
-			sourceTree = "<group>";
-		};
 		924669AE2ADDB6F000C2A238 /* FincherTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,90 +222,6 @@
 				924669BB2ADDB6F000C2A238 /* FincherUITestsLaunchTests.swift */,
 			);
 			path = FincherUITests;
-			sourceTree = "<group>";
-		};
-		924669C82ADDC27200C2A238 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				924669982ADDB6EE00C2A238 /* AppDelegate.swift */,
-				9246699A2ADDB6EE00C2A238 /* SceneDelegate.swift */,
-				924669CF2ADDC55600C2A238 /* BusinessLogic */,
-				924669CE2ADDC54C00C2A238 /* Entity */,
-				924669CD2ADDC53E00C2A238 /* Assembly */,
-				924669CC2ADDC52900C2A238 /* Flows */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		924669C92ADDC4C900C2A238 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				924669A12ADDB6F000C2A238 /* Assets.xcassets */,
-				924669A32ADDB6F000C2A238 /* LaunchScreen.storyboard */,
-				1B2F32582AE0017600F68A15 /* Localizable.strings */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		924669CA2ADDC4EA00C2A238 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				924669D02ADDC5EC00C2A238 /* Extension */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		924669CB2ADDC4FB00C2A238 /* Environments */ = {
-			isa = PBXGroup;
-			children = (
-				924669A62ADDB6F000C2A238 /* Info.plist */,
-			);
-			path = Environments;
-			sourceTree = "<group>";
-		};
-		924669CC2ADDC52900C2A238 /* Flows */ = {
-			isa = PBXGroup;
-			children = (
-				1B2F32522ADEDF2600F68A15 /* MainViewController.swift */,
-				1BEECA682AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift */,
-				1BEECA6A2AE5B0400085AB1E /* DropDownButtonBuilder.swift */,
-				1BEECA6C2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift */,
-				1BEECA6E2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift */,
-				1BEECA702AE934300085AB1E /* InterestRateStackViewBuilder.swift */,
-				1BEECA722AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift */,
-			);
-			path = Flows;
-			sourceTree = "<group>";
-		};
-		924669CD2ADDC53E00C2A238 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				1B2F325B2AE004BA00F68A15 /* Strings.swift */,
-			);
-			path = Assembly;
-			sourceTree = "<group>";
-		};
-		924669CE2ADDC54C00C2A238 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1B7375DA2AF0F66F0057D924 /* CreditModel.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		924669CF2ADDC55600C2A238 /* BusinessLogic */ = {
-			isa = PBXGroup;
-			children = (
-				1BEECA782AEEBBAA0085AB1E /* ViewModel.swift */,
-			);
-			path = BusinessLogic;
-			sourceTree = "<group>";
-		};
-		924669D02ADDC5EC00C2A238 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		E484B06C8690345AE74A8D8F /* Pods */ = {
@@ -280,7 +249,7 @@
 				924669922ADDB6EE00C2A238 /* Frameworks */,
 				924669932ADDB6EE00C2A238 /* Resources */,
 				726C443BAFB35B5D1D4C1EAC /* [CP] Embed Pods Frameworks */,
-				1B5C3F332B09318800AB1D2A /* ShellScript */,
+				1B5C3F332B09318800AB1D2A /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -379,9 +348,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				924669A52ADDB6F000C2A238 /* LaunchScreen.storyboard in Resources */,
-				1B2F32562AE0017600F68A15 /* Localizable.strings in Resources */,
-				924669A22ADDB6F000C2A238 /* Assets.xcassets in Resources */,
+				3463C7492B0F9A30001033B3 /* LaunchScreen.storyboard in Resources */,
+				3463C7482B0F9A30001033B3 /* Assets.xcassets in Resources */,
+				3463C7472B0F9A30001033B3 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,8 +393,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1B5C3F332B09318800AB1D2A /* ShellScript */ = {
+		1B5C3F332B09318800AB1D2A /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -433,6 +403,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -526,18 +497,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BEECA6B2AE5B0400085AB1E /* DropDownButtonBuilder.swift in Sources */,
-				1BEECA692AE5AA440085AB1E /* CalculateOptionStackViewBuilder.swift in Sources */,
-				1BEECA712AE934300085AB1E /* InterestRateStackViewBuilder.swift in Sources */,
-				1B7375DB2AF0F66F0057D924 /* CreditModel.swift in Sources */,
-				1BEECA792AEEBBAA0085AB1E /* ViewModel.swift in Sources */,
-				1B2F32532ADEDF2700F68A15 /* MainViewController.swift in Sources */,
-				924669992ADDB6EE00C2A238 /* AppDelegate.swift in Sources */,
-				1BEECA6F2AE5B38D0085AB1E /* CreditTermStackViewBuilder.swift in Sources */,
-				1BEECA732AE950BF0085AB1E /* MonthlyPaymentStackViewBuilder.swift in Sources */,
-				1B2F325C2AE004BA00F68A15 /* Strings.swift in Sources */,
-				9246699B2ADDB6EE00C2A238 /* SceneDelegate.swift in Sources */,
-				1BEECA6D2AE5B1FF0085AB1E /* AmountOfCreditStackViewBuilder.swift in Sources */,
+				3463C7542B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift in Sources */,
+				3463C74C2B0F9A30001033B3 /* AppDelegate.swift in Sources */,
+				3463C7462B0F9A30001033B3 /* CreditModel.swift in Sources */,
+				3463C7522B0F9A30001033B3 /* InterestRateStackViewBuilder.swift in Sources */,
+				3463C74D2B0F9A30001033B3 /* DropDownButtonBuilder.swift in Sources */,
+				3463C74F2B0F9A30001033B3 /* MainViewController.swift in Sources */,
+				3463C7512B0F9A30001033B3 /* CreditTermStackViewBuilder.swift in Sources */,
+				3463C7532B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift in Sources */,
+				3463C74E2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift in Sources */,
+				3463C7452B0F9A30001033B3 /* Strings.swift in Sources */,
+				3463C7502B0F9A30001033B3 /* ViewModel.swift in Sources */,
+				3463C7552B0F9A30001033B3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,22 +545,29 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1B2F32582AE0017600F68A15 /* Localizable.strings */ = {
+		3463C7302B0F9A30001033B3 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1B2F32572AE0017600F68A15 /* en */,
-				1B2F325A2AE001A400F68A15 /* ru */,
+				3463C7312B0F9A30001033B3 /* en */,
+				3463C7372B0F9A30001033B3 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		924669A32ADDB6F000C2A238 /* LaunchScreen.storyboard */ = {
+		3463C7332B0F9A30001033B3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				924669A42ADDB6F000C2A238 /* Base */,
-				1B2F32592AE001A300F68A15 /* ru */,
+				3463C7342B0F9A30001033B3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3463C7352B0F9A30001033B3 /* LaunchScreen.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3463C7362B0F9A30001033B3 /* ru */,
+			);
+			name = LaunchScreen.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -721,7 +699,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SJ69ZFHT28;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Fincher/Environments/Info.plist;
+				INFOPLIST_FILE = Fincher/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Финчер";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -752,7 +730,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SJ69ZFHT28;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Fincher/Environments/Info.plist;
+				INFOPLIST_FILE = Fincher/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Финчер";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

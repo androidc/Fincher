@@ -1,0 +1,24 @@
+PODS:
+  - DropDown (2.3.13)
+  - SnapKit (5.6.0)
+  - SwiftLint (0.54.0)
+
+DEPENDENCIES:
+  - DropDown
+  - SnapKit
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - DropDown
+    - SnapKit
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
+
+PODFILE CHECKSUM: c03a25c1437abb8b761d4c78754f1cbe9566ebeb
+
+COCOAPODS: 1.12.1
