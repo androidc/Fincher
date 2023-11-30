@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		245BDA66D846C5BAC755C3AA /* Pods_FincherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D657E842A100FC60B4DD3071 /* Pods_FincherTests.framework */; };
 		3463C7452B0F9A30001033B3 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C72C2B0F9A30001033B3 /* Strings.swift */; };
-		3463C7462B0F9A30001033B3 /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C72E2B0F9A30001033B3 /* CreditModel.swift */; };
+		3463C7462B0F9A30001033B3 /* Payments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C72E2B0F9A30001033B3 /* Payments.swift */; };
 		3463C7472B0F9A30001033B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3463C7302B0F9A30001033B3 /* Localizable.strings */; };
 		3463C7482B0F9A30001033B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3463C7322B0F9A30001033B3 /* Assets.xcassets */; };
 		3463C7492B0F9A30001033B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3463C7332B0F9A30001033B3 /* LaunchScreen.storyboard */; };
@@ -17,12 +17,13 @@
 		3463C74D2B0F9A30001033B3 /* DropDownButtonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73C2B0F9A30001033B3 /* DropDownButtonBuilder.swift */; };
 		3463C74E2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73D2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift */; };
 		3463C74F2B0F9A30001033B3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73E2B0F9A30001033B3 /* MainViewController.swift */; };
-		3463C7502B0F9A30001033B3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73F2B0F9A30001033B3 /* ViewModel.swift */; };
+		3463C7502B0F9A30001033B3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C73F2B0F9A30001033B3 /* MainViewModel.swift */; };
 		3463C7512B0F9A30001033B3 /* CreditTermStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7402B0F9A30001033B3 /* CreditTermStackViewBuilder.swift */; };
 		3463C7522B0F9A30001033B3 /* InterestRateStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7412B0F9A30001033B3 /* InterestRateStackViewBuilder.swift */; };
 		3463C7532B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7422B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift */; };
 		3463C7542B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7432B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift */; };
 		3463C7552B0F9A30001033B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3463C7442B0F9A30001033B3 /* SceneDelegate.swift */; };
+		3492596C2B18A02700FEB72D /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3492596B2B18A02700FEB72D /* .swiftlint.yml */; };
 		34B4732F2B0FA1F300BB9812 /* DetailsScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4732A2B0FA1F300BB9812 /* DetailsScreenCell.swift */; };
 		34B473302B0FA1F300BB9812 /* DetailsScreenViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4732B2B0FA1F300BB9812 /* DetailsScreenViewData.swift */; };
 		34B473312B0FA1F300BB9812 /* DetailsScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B4732C2B0FA1F300BB9812 /* DetailsScreenViewModel.swift */; };
@@ -58,23 +59,23 @@
 		2A6D6232FB7AC4E430DA1A38 /* Pods-Fincher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fincher.debug.xcconfig"; path = "Target Support Files/Pods-Fincher/Pods-Fincher.debug.xcconfig"; sourceTree = "<group>"; };
 		32DB09BD8B4D417652BE1814 /* Pods-FincherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FincherTests.debug.xcconfig"; path = "Target Support Files/Pods-FincherTests/Pods-FincherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3463C72C2B0F9A30001033B3 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		3463C72E2B0F9A30001033B3 /* CreditModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
+		3463C72E2B0F9A30001033B3 /* Payments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payments.swift; sourceTree = "<group>"; };
 		3463C7312B0F9A30001033B3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3463C7322B0F9A30001033B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3463C7342B0F9A30001033B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3463C7362B0F9A30001033B3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3463C7372B0F9A30001033B3 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3463C7382B0F9A30001033B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3463C7392B0F9A30001033B3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3463C73C2B0F9A30001033B3 /* DropDownButtonBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownButtonBuilder.swift; sourceTree = "<group>"; };
 		3463C73D2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountOfCreditStackViewBuilder.swift; sourceTree = "<group>"; };
 		3463C73E2B0F9A30001033B3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		3463C73F2B0F9A30001033B3 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3463C73F2B0F9A30001033B3 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		3463C7402B0F9A30001033B3 /* CreditTermStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditTermStackViewBuilder.swift; sourceTree = "<group>"; };
 		3463C7412B0F9A30001033B3 /* InterestRateStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestRateStackViewBuilder.swift; sourceTree = "<group>"; };
 		3463C7422B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthlyPaymentStackViewBuilder.swift; sourceTree = "<group>"; };
 		3463C7432B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateOptionStackViewBuilder.swift; sourceTree = "<group>"; };
 		3463C7442B0F9A30001033B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3492596B2B18A02700FEB72D /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		34A5529620D6A61E2982F382 /* Pods_Fincher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fincher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B4732A2B0FA1F300BB9812 /* DetailsScreenCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreenCell.swift; sourceTree = "<group>"; };
 		34B4732B2B0FA1F300BB9812 /* DetailsScreenViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsScreenViewData.swift; sourceTree = "<group>"; };
@@ -159,7 +160,7 @@
 		3463C72D2B0F9A30001033B3 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				3463C72E2B0F9A30001033B3 /* CreditModel.swift */,
+				3463C72E2B0F9A30001033B3 /* Payments.swift */,
 				34B473342B0FA20200BB9812 /* CreditMonthData.swift */,
 				34B473362B0FA21500BB9812 /* InvestMonthData.swift */,
 			);
@@ -172,7 +173,7 @@
 				3463C7322B0F9A30001033B3 /* Assets.xcassets */,
 				3463C7332B0F9A30001033B3 /* LaunchScreen.storyboard */,
 				3463C7382B0F9A30001033B3 /* Info.plist */,
-				3463C7352B0F9A30001033B3 /* LaunchScreen.strings */,
+				3492596B2B18A02700FEB72D /* .swiftlint.yml */,
 				3463C7302B0F9A30001033B3 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -190,28 +191,84 @@
 		3463C73B2B0F9A30001033B3 /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				3463C73C2B0F9A30001033B3 /* DropDownButtonBuilder.swift */,
-				3463C73D2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift */,
-				3463C73E2B0F9A30001033B3 /* MainViewController.swift */,
-				3463C73F2B0F9A30001033B3 /* ViewModel.swift */,
-				3463C7402B0F9A30001033B3 /* CreditTermStackViewBuilder.swift */,
-				3463C7412B0F9A30001033B3 /* InterestRateStackViewBuilder.swift */,
-				3463C7422B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift */,
-				3463C7432B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift */,
+				3492596E2B18B78400FEB72D /* Assebly */,
+				34B4733D2B0FD0E200BB9812 /* View */,
+				3492596D2B18B70E00FEB72D /* ViewModel */,
 			);
 			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		3492596D2B18B70E00FEB72D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3463C73F2B0F9A30001033B3 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3492596E2B18B78400FEB72D /* Assebly */ = {
+			isa = PBXGroup;
+			children = (
+				3463C73D2B0F9A30001033B3 /* AmountOfCreditStackViewBuilder.swift */,
+				3463C7432B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift */,
+				3463C7402B0F9A30001033B3 /* CreditTermStackViewBuilder.swift */,
+				3463C73C2B0F9A30001033B3 /* DropDownButtonBuilder.swift */,
+				3463C7422B0F9A30001033B3 /* MonthlyPaymentStackViewBuilder.swift */,
+				3463C7412B0F9A30001033B3 /* InterestRateStackViewBuilder.swift */,
+			);
+			path = Assebly;
 			sourceTree = "<group>";
 		};
 		34B473292B0FA1F300BB9812 /* DetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				34B4732D2B0FA1F300BB9812 /* DetailsScreenAssembly.swift */,
-				34B4732B2B0FA1F300BB9812 /* DetailsScreenViewData.swift */,
-				34B4732C2B0FA1F300BB9812 /* DetailsScreenViewModel.swift */,
-				34B4732E2B0FA1F300BB9812 /* DetailsScreenViewController.swift */,
-				34B4732A2B0FA1F300BB9812 /* DetailsScreenCell.swift */,
+				34B4733C2B0FD03A00BB9812 /* Assembly */,
+				34B4733B2B0FD02400BB9812 /* Model */,
+				34B473392B0FCFF600BB9812 /* View */,
+				34B4733A2B0FD00D00BB9812 /* ViewModel */,
 			);
 			path = DetailsScreen;
+			sourceTree = "<group>";
+		};
+		34B473392B0FCFF600BB9812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				34B4732A2B0FA1F300BB9812 /* DetailsScreenCell.swift */,
+				34B4732E2B0FA1F300BB9812 /* DetailsScreenViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		34B4733A2B0FD00D00BB9812 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				34B4732C2B0FA1F300BB9812 /* DetailsScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		34B4733B2B0FD02400BB9812 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34B4732B2B0FA1F300BB9812 /* DetailsScreenViewData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34B4733C2B0FD03A00BB9812 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				34B4732D2B0FA1F300BB9812 /* DetailsScreenAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		34B4733D2B0FD0E200BB9812 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3463C73E2B0F9A30001033B3 /* MainViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		9246698C2ADDB6EE00C2A238 = {
@@ -377,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3492596C2B18A02700FEB72D /* .swiftlint.yml in Resources */,
 				3463C7492B0F9A30001033B3 /* LaunchScreen.storyboard in Resources */,
 				3463C7482B0F9A30001033B3 /* Assets.xcassets in Resources */,
 				3463C7472B0F9A30001033B3 /* Localizable.strings in Resources */,
@@ -439,7 +497,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+			shellScript = "SWIFT_LINT=\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n$SWIFT_LINT --config .swiftlint.yml\n";
 		};
 		726C443BAFB35B5D1D4C1EAC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -529,7 +587,7 @@
 				3463C7542B0F9A30001033B3 /* CalculateOptionStackViewBuilder.swift in Sources */,
 				3463C74C2B0F9A30001033B3 /* AppDelegate.swift in Sources */,
 				34B4732F2B0FA1F300BB9812 /* DetailsScreenCell.swift in Sources */,
-				3463C7462B0F9A30001033B3 /* CreditModel.swift in Sources */,
+				3463C7462B0F9A30001033B3 /* Payments.swift in Sources */,
 				3463C7522B0F9A30001033B3 /* InterestRateStackViewBuilder.swift in Sources */,
 				3463C74D2B0F9A30001033B3 /* DropDownButtonBuilder.swift in Sources */,
 				3463C74F2B0F9A30001033B3 /* MainViewController.swift in Sources */,
@@ -541,7 +599,7 @@
 				34B473322B0FA1F300BB9812 /* DetailsScreenAssembly.swift in Sources */,
 				34B473372B0FA21500BB9812 /* InvestMonthData.swift in Sources */,
 				3463C7452B0F9A30001033B3 /* Strings.swift in Sources */,
-				3463C7502B0F9A30001033B3 /* ViewModel.swift in Sources */,
+				3463C7502B0F9A30001033B3 /* MainViewModel.swift in Sources */,
 				34B473352B0FA20300BB9812 /* CreditMonthData.swift in Sources */,
 				34B473332B0FA1F300BB9812 /* DetailsScreenViewController.swift in Sources */,
 				3463C7552B0F9A30001033B3 /* SceneDelegate.swift in Sources */,
@@ -596,14 +654,6 @@
 				3463C7342B0F9A30001033B3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		3463C7352B0F9A30001033B3 /* LaunchScreen.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3463C7362B0F9A30001033B3 /* ru */,
-			);
-			name = LaunchScreen.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

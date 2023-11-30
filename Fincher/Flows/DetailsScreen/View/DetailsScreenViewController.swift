@@ -66,7 +66,7 @@ private extension DetailsScreenViewController {
     func setupTableViewConstraint() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -74,16 +74,20 @@ private extension DetailsScreenViewController {
     }
 
     func setupCloseButton() {
+        view.addSubview(closeButton)
         closeButton.addTarget(self, action: #selector(closeButtonTap), for: .touchUpInside)
+        closeButton.setTitle("Закрыть", for: .normal)
+        closeButton.backgroundColor = .systemBackground
+        closeButton.setTitleColor(.label, for: .normal)
+        closeButton.layer.cornerRadius = 8
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-//            closeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-//            closeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            closeButton.widthAnchor.constraint(equalToConstant: 40)
+            closeButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            closeButton.centerXAnchor.constraint(equalTo: tableView.centerXAnchor)
         ])
     }
 
-    @objc 
+    @objc
     func closeButtonTap() {
         dismiss(animated: true)
     }

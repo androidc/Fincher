@@ -1,9 +1,11 @@
+warning_threshold: 21
 included:
   - Plugins
   - Source
   - Tests
   - Fincher
 excluded:
+  - Pods
   - Tests/SwiftLintFrameworkTests/Resources
 analyzer_rules:
   - unused_declaration

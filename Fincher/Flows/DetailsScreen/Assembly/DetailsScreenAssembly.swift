@@ -47,7 +47,7 @@ final class DetailsScreenAssembly {
             DetailsScreenViewData(
                 number: "10", date: "Дата:\n 25.01.2026",
                 amount: "Сумма:\n50 000 руб", percent: "Проценты:\n30 000 руб", renewal: "Основной:\n50 000 руб",
-                contrib: "Доп взнос:\n0 руб", general: "Общая сумма:\n3 000 000"),
+                contrib: "Доп взнос:\n0 руб", general: "Общая сумма:\n3 000 000")
         ]
     }
 }
