@@ -23,15 +23,24 @@ final class DetailsScreenCell: UITableViewCell {
         accessoryType = .none
     }
 
-    func configure(_ item: DetailsScreenViewData) {
-        numberLabel.text = item.number
-        amountLabel.text = item.amount
-        dateLabel.text = item.date
-        percentLabel.text = item.percent
-        renewalLabel.text = item.renewal
-        contribLabel.text = item.contrib
-        generalLabel.text = item.general
-    }
+//    func configure(_ item: DetailsScreenViewData) {
+//        numberLabel.text = item.number
+//        amountLabel.text = item.amount
+//        dateLabel.text = item.date
+//        percentLabel.text = item.percent
+//        renewalLabel.text = item.renewal
+//        contribLabel.text = item.contrib
+//        generalLabel.text = item.general
+//    }
+        func configure(_ item: Payments) {
+            numberLabel.text = "\(item.number)"
+            amountLabel.text = String(format: "%.2f", item.ostatok)
+           // dateLabel.text = item.
+            percentLabel.text = String(format: "%.2f", item.percent)
+            renewalLabel.text = String(format: "%.2f", item.payment)
+            contribLabel.text = String(format: "%.2f", item.remains)
+            // generalLabel.text = item.general
+        }
 }
 
 private extension DetailsScreenCell {
@@ -39,11 +48,11 @@ private extension DetailsScreenCell {
         setupLabels([
             numberLabel,
             amountLabel,
-            dateLabel,
+            // dateLabel,
             percentLabel,
             renewalLabel,
-            contribLabel,
-            generalLabel
+            contribLabel
+            // generalLabel
         ])
 
         backgroundColor = .systemBackground
@@ -63,16 +72,26 @@ private extension DetailsScreenCell {
         ])
     }
 
+//    var contentStack: UIStackView {
+//        vStack([
+//            hStack([
+//                amountLabel,
+//                dateLabel]),
+//            hStack([
+//                percentLabel,
+//                renewalLabel,
+//                contribLabel]),
+//            generalLabel
+//        ])
+//    }
     var contentStack: UIStackView {
         vStack([
             hStack([
-                amountLabel,
-                dateLabel]),
+                amountLabel]),
             hStack([
                 percentLabel,
                 renewalLabel,
-                contribLabel]),
-            generalLabel
+                contribLabel])
         ])
     }
 
