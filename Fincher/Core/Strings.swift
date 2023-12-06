@@ -25,4 +25,12 @@ class Strings {
         "Interest Rate", bundle: Bundle.main, comment: "Interest Rate")
     let monthlyPaymentString = NSLocalizedString(
         "Monthly Payment", bundle: Bundle.main, comment: "Monthly Payment")
+    let annuitentTipString = NSLocalizedString(
+        "Annuitent Payment", bundle: Bundle.main, comment: "Annuitent Payment")
+    let diffTipString = NSLocalizedString(
+        "Diff Payment", bundle: Bundle.main, comment: "Diff Payment")
+    let annuityString = NSLocalizedString(
+        "annuity", bundle: Bundle.main, comment: "annuity")
+    let diffString = NSLocalizedString(
+        "differentiated", bundle: Bundle.main, comment: "differentiated")
 }

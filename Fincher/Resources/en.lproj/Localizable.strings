@@ -17,3 +17,7 @@
 "Credit Term" = "Credit Term";
 "Interest Rate" = "Interest Rate";
 "Monthly Payment" = "Monthly Payment";
+"Annuitent Payment" = "this is an equal monthly loan payment, which includes the amount of accrued interest on the bank loan and the amount of the principal debt";
+"Diff Payment" = "This is a monthly payment that decreases towards the end of the loan term and consists of a paid constant portion of the principal and interest on the unpaid balance of the loan.";
+"annuity" = "Annuity";
+"differentiated" = "Differentiated";

@@ -33,6 +33,8 @@ class AmountOfCreditStackViewBuilder {
     }()
 
     func buildAmountOfCreditStackView() -> UIStackView {
+        let resultStackView = UIStackView()
+        resultStackView.axis = .vertical
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .top
@@ -42,11 +44,16 @@ class AmountOfCreditStackViewBuilder {
             .dropFirst()
             .assign(to: \.creditCurrency, on: viewModel)
             .store(in: &subscriptions)
-        [self.lblAmountCredit,
+        [
          self.textViewAmountCredit,
          dropDownButton].forEach { stackView.addArrangedSubview($0) }
         stackView.spacing = UIStackView.spacingUseSystem
         stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20)
-        return stackView
+        [self.lblAmountCredit,
+         stackView].forEach { resultStackView.addArrangedSubview($0) }
+        resultStackView.spacing = UIStackView.spacingUseSystem
+        resultStackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 20,
+                                                                           bottom: 20, trailing: 20)
+        return resultStackView
     }
 }

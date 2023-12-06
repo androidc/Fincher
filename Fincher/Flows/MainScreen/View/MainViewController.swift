@@ -262,8 +262,24 @@ class MainViewController: UIViewController {
             calculationTypeHandler(.differentiated)
         case .infoAnuitentButton:
             print("show anuitent calculation info")
+            let alert = UIAlertController(
+                title: Strings.shared.annuityString,
+                message: Strings.shared.annuitentTipString,
+                preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(
+                title: Strings.shared.okString,
+                style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         case .infoDifferentiatedButton:
             print("show differentiated calculation info")
+            let alert = UIAlertController(
+                title: Strings.shared.diffString,
+                message: Strings.shared.diffTipString,
+                preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(
+                title: Strings.shared.okString,
+                style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         case .none:
             break
         }
@@ -276,8 +292,11 @@ class MainViewController: UIViewController {
 
     @objc
     func btnPopUpCalculate(sender: UIButton) {
+        viewModel.paymentsCalendar = []
         let assembly = DetailsScreenAssembly()
-        let data = assembly.mockData()
+        // let data = assembly.mockData()
+        calculate()
+        let data = viewModel.paymentsCalendar
         let controller = assembly.assemble(data)
         controller.modalTransitionStyle = .crossDissolve
         controller.modalPresentationStyle = .fullScreen
