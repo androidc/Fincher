@@ -14,6 +14,24 @@
 
 Проект выполнен без использования StoryBoard, все элементы созданы в коде и размещены с использованием Constraints. 
 
+## Архитектурные и технологические решения
+
+- UIKit
+- Combine
+- Localization
+- MVVM
+- Extensions
+- Publishers
+- Throwing functions
+
+
+## Элементы дизайна
+
+- StackView
+- Buttons
+- TextView
+- Segment Control
+
 
 ## Authors
 
