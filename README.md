@@ -12,4 +12,11 @@
 
 ## Lessons Learned
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+Проект выполнен без использования StoryBoard, все элементы созданы в коде и размещены с использованием Constraints. 
+
+
+## Authors
+
+- [@androidc](https://www.github.com/androidc)
+
+- [@Deni0S](https://www.github.com/Deni0S)
