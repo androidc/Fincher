@@ -21,6 +21,7 @@
 - Localization
 - MVVM
 - Extensions
+- Delegate
 - Publishers
 - Throwing functions
 
@@ -29,8 +30,10 @@
 
 - StackView
 - Buttons
+- Labels
 - TextView
 - Segment Control
+- TableView
 
 
 ## Authors
