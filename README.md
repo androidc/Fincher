@@ -48,6 +48,6 @@
 
 ## Авторы
 
-- [@androidc](https://www.github.com/androidc)
+- [@androidc](https://www.github.com/androidc) - разработка главного экрана
 
-- [@Deni0S](https://www.github.com/Deni0S)
+- [@Deni0S](https://www.github.com/Deni0S) - разработка экрана с графиком платежей, общее руководство ходом проекта
