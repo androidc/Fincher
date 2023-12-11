@@ -10,7 +10,7 @@
 ![App Screenshot](https://github.com/androidc/Fincher/blob/develop/Screen22.png)
 
 
-## Lessons Learned
+## Описание решения
 
 Проект выполнен без использования StoryBoard, все элементы созданы в коде и размещены с использованием Constraints. 
 
@@ -36,7 +36,7 @@
 - TableView
 
 
-## Authors
+## Авторы
 
 - [@androidc](https://www.github.com/androidc)
 
